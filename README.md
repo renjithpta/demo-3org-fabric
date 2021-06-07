@@ -103,6 +103,7 @@ The postman collection is shared and can imported and tested
 
 #### Get  history of all trasnction expect deployment of chaincodes
 * URL :http://localhost:4000/alltransactions/channels/mychannel
+* Eg : http://localhost:4000/alltransactions/channels/mychannel
 * Method : GET
 * Authorization : Bearer {{TOKEN replace with token from login}}
 
@@ -110,7 +111,9 @@ The postman collection is shared and can imported and tested
 
 
 #### Get  detailed history of all trasnction expect deployment of chaincodes
+
 * URL :http://localhost:4000//detiledalltransactions/channels/:channelName
+* eg : http://localhost:4000/alltransactions/channels/mychannel
 * Method : GET
 * Authorization : Bearer {{TOKEN replace with token from login}}
 
