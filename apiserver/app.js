@@ -19,6 +19,7 @@ const port = process.env.PORT || constants.port;
 const helper = require('./app/helper')
 const invoke = require('./app/invoke')
 const qscc = require('./app/qscc')
+const cscc = require('./app/cscc')
 const query = require('./app/query')
 
 app.options('*', cors());
@@ -330,6 +331,57 @@ app.get('/qscc/channels/:channelName/chaincodes/:chaincodeName', async function 
         logger.debug(args);
 
         let response_payload = await qscc.qscc(channelName, chaincodeName, args, fcn, req.username, req.orgname);
+
+        // const response_payload = {
+        //     result: message,
+        //     error: null,
+        //     errorData: null
+        // }
+
+        res.send(response_payload);
+    } catch (error) {
+        const response_payload = {
+            result: null,
+            error: error.name,
+            errorData: error.message
+        }
+        res.send(response_payload)
+    }
+});
+
+
+
+
+app.get('/detiledalltransactions/channels/:channelName', async function (req, res) {
+    try {
+        logger.debug('==================== QUERY BY CHAINCODE ==================');
+         var channelName = req.params.channelName;
+        let response_payload = await cscc.css(channelName,req.username, req.orgname);
+
+        // const response_payload = {
+        //     result: message,
+        //     error: null,
+        //     errorData: null
+        // }
+
+        res.send(response_payload);
+    } catch (error) {
+        const response_payload = {
+            result: null,
+            error: error.name,
+            errorData: error.message
+        }
+        res.send(response_payload)
+    }
+});
+
+
+
+app.get('/alltransactions/channels/:channelName', async function (req, res) {
+    try {
+        logger.debug('==================== QUERY BY CHAINCODE ==================');
+         var channelName = req.params.channelName;
+        let response_payload = await cscc.minimalData(channelName,req.username, req.orgname);
 
         // const response_payload = {
         //     result: message,
