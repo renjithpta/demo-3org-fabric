@@ -15,12 +15,9 @@
     - One Certificate Authority
 
 ## Software Prerequisites
-<<<<<<< HEAD
+
 	OS: windows 10
 	Git with gitbash installed
-=======
-	OS: ubuntu
->>>>>>> 1e1f3f36659b2d927dc82e9e861253ca0dbbbf59
 	Hyperledger Fabric 2.3
 	Go 1.15
 	Node 1.10.x or later
@@ -119,10 +116,5 @@ The postman collection is shared and can imported and tested
 
 The postman collection is shared and can imported and tested
 
-
-=======
-
-The postman collection is shared and can imported and tested
->>>>>>> 1e1f3f36659b2d927dc82e9e861253ca0dbbbf59
 
 
